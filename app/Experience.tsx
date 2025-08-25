@@ -48,7 +48,7 @@ const Experience = () => {
       period: 'Jul 2025 - Present',
       description: [
         'Driving end-to-end technology development, cloud infrastructure, and backend architecture',
-        'Owning the complete development lifecycle — from coding and deployment to scaling and monitoring',
+        'Owning the complete development lifecycle from coding and deployment to scaling and monitoring',
         'Handling DevOps, automation, and cloud-native solutions (AWS)',
         'Actively contributing to marketing and growth initiatives alongside product development'
       ],

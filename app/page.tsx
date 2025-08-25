@@ -202,14 +202,14 @@ export default function Home() {
 
           <ProjectCard
             title="Second Brain"
-            description="A website for organizing knowledge — save and share documents, notes, and links."
+            description="A website for organizing knowledge save and share documents, notes, and links."
             technologies={['Node.js', 'Express', 'TypeScript', 'Prisma', 'React']}
             githubLink="https://github.com/Pushkarmondal/Second-Brain"
           />
 
           <ProjectCard
             title="BidCraft"
-            description="A real-time auction platform where users can create auctions, place bids, and announce winners — built with WebSockets and secure authentication."
+            description="A real-time auction platform where users can create auctions, place bids, and announce winners built with WebSockets and secure authentication."
             technologies={['Node.js', 'Express', 'TypeScript', 'Prisma', 'React', 'WebSockets', 'TailwindCSS']}
             githubLink="https://github.com/Pushkarmondal/live_bidding_website"
           >
