@@ -43,7 +43,7 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
 const Experience = () => {
   const experiences = [
     {
-      role: 'Chief Technology Officer (CTO)',
+      role: 'Founding Engineer',
       company: 'Glowbook',
       period: 'Jul 2025 - Present',
       description: [
