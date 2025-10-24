@@ -5,6 +5,29 @@
   --foreground: #171717;
 }
 
+/* Explicit themes via data-theme */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Ocean: deep blue background, soft light foreground */
+[data-theme="ocean"] {
+  --background: #0b1221; /* deep navy */
+  --foreground: #dbeafe; /* light blue-100 */
+}
+
+/* Sunset: warm dark with peach foreground */
+[data-theme="sunset"] {
+  --background: #1a0f10; /* deep maroon-brown */
+  --foreground: #ffe6d5; /* peach */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,8 +42,12 @@
   }
 }
 
-body {
+html, body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 300ms ease, color 300ms ease, background 300ms ease;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
 }

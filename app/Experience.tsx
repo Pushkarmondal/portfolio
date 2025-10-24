@@ -31,7 +31,11 @@ export const ExperienceItem: React.FC<ExperienceItemProps> = ({
       </ul>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
-          <span key={index} className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">
+          <span
+            key={index}
+            className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm text-xs"
+          >
+            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
             {skill}
           </span>
         ))}

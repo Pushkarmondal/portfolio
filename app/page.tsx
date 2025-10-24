@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technolog
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-slate-900/50 p-6 rounded-lg transition-all duration-300">
+    <div className=" p-6 rounded-lg transition-all duration-300">
       <div 
         className="flex justify-between items-center cursor-pointer" 
         onClick={() => setIsExpanded(!isExpanded)}
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technolog
         <p className="text-gray-300 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
-            <span key={index} className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">
+            <span key={index} className="text-xs bg-neutral-800 text-gray-300 px-2 py-1 rounded">
               {tech}
             </span>
           ))}
@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technolog
           href={githubLink} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm gap-1"
+          className="inline-flex items-center text-orange-400 hover:text-orange-300 text-sm gap-1"
           onClick={(e) => e.stopPropagation()}
         >
           <span>GitHub</span>
@@ -64,23 +64,63 @@ export default function Home() {
       <section className="py-12 md:py-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="md:w-1/2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 whitespace-nowrap">Pushkar Mondal</h1>
-            <h2 className="text-xl md:text-2xl text-gray-300 mb-4">Backend Developer</h2>
-            <p className="text-base md:text-lg text-gray-400 mb-6">
-              I build robust and scalable server-side applications with a focus on performance and clean architecture.
-            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 whitespace-nowrap">Pushkar Mondal</h1>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+                <span className="relative inline-flex">
+                  <span className="absolute inline-flex h-3 w-3 rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_10px_2px_rgba(16,185,129,0.7)]"></span>
+                </span>
+                <span className="font-medium">Available for work</span>
+              </span>
+            </div>
+            <h2 className="text-xl md:text-2xl text-orange-500 mb-10">Backend Developer</h2>
             <div className="flex space-x-4 mb-12">
-              <a href="https://github.com/Pushkarmondal" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://github.com/Pushkarmondal"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="group relative inline-flex text-gray-400 hover:text-white transition-colors"
+              >
                 <FaGithub size={24} />
+                <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 -translate-y-1 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-200 bg-white/90 text-black text-xs px-2 py-1 rounded shadow">
+                  GitHub
+                </span>
               </a>
-              <a href="https://www.linkedin.com/in/pushkar-mondal/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.linkedin.com/in/pushkar-mondal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="group relative inline-flex text-gray-400 hover:text-white transition-colors"
+              >
                 <FaLinkedin size={24} />
+                <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 -translate-y-1 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-200 bg-white/90 text-black text-xs px-2 py-1 rounded shadow">
+                  LinkedIn
+                </span>
               </a>
-              <a href="https://x.com/pushkarmondal79" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://x.com/pushkarmondal79"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="group relative inline-flex text-gray-400 hover:text-white transition-colors"
+              >
                 <FaTwitter size={24} />
+                <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 -translate-y-1 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-200 bg-white/90 text-black text-xs px-2 py-1 rounded shadow">
+                  Twitter
+                </span>
               </a>
-              <a href="mailto:nishitm060@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="mailto:nishitm060@gmail.com"
+                aria-label="Email"
+                className="group relative inline-flex text-gray-400 hover:text-white transition-colors"
+              >
                 <FaEnvelope size={24} />
+                <span className="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 -translate-y-1 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-200 bg-white/90 text-black text-xs px-2 py-1 rounded shadow">
+                  Email
+                </span>
               </a>
             </div>
           </div>
@@ -114,19 +154,20 @@ export default function Home() {
 
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-8 text-white">Skills & Tools</h2>
-        <div className="space-y-8">
+        <div className=" rounded-2xl p-6 md:p-8">
+          <div className="space-y-8">
           <div>
             <h3 className="text-xl font-medium mb-4 text-gray-200 border-b border-gray-700 pb-2">DevOps & Cloud</h3>
             <ul className="flex flex-wrap gap-4">
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 Docker, Kubernetes (Kind, Minikube, EKS)
               </li>
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 Terraform, GitHub Actions, CI/CD
               </li>
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 AWS (EC2, S3, Lambda, Boto3), CloudWatch
               </li>
@@ -136,19 +177,19 @@ export default function Home() {
           <div>
             <h3 className="text-xl font-medium mb-4 text-gray-200 border-b border-gray-700 pb-2">Backend Development</h3>
             <ul className="flex flex-wrap gap-4">
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 Node.js, Express, Bun, TypeScript
               </li>
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 PostgreSQL, MongoDB, Prisma ORM
               </li>
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 WebSocket, Redis, Kafka, WebRTC
               </li>
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 REST APIs, JSON handling, JWT, OAuth, OpenAPI
               </li>
@@ -158,13 +199,14 @@ export default function Home() {
           <div>
             <h3 className="text-xl font-medium mb-4 text-gray-200 border-b border-gray-700 pb-2">Frontend</h3>
             <ul className="flex flex-wrap gap-4">
-              <li className="flex items-center text-gray-400 bg-gray-800/50 px-4 py-2 rounded-full">
+              <li className="flex items-center text-slate-900 bg-white px-4 py-2 rounded-full border border-slate-200 shadow-sm">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
                 React, NextJS
               </li>
             </ul>
           </div>
         </div>
+      </div>
       </section>
 
       <Experience />
@@ -241,7 +283,7 @@ export default function Home() {
 
       <section>
         <h2 className="text-2xl font-semibold mb-6">Get In Touch</h2>
-        <div className="bg-slate-900/50 p-6 rounded-lg">
+        <div className=" p-6 rounded-lg">
           <p className="text-gray-300 mb-6">
             I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
